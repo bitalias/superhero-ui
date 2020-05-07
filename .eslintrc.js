@@ -34,6 +34,8 @@ module.exports = {
     'vue/require-direct-export': 'error',
     'vue/space-infix-ops': 'error',
     'vue/space-unary-ops': 'error',
+    'vue-i18n/no-dynamic-keys': 'error',
+    'vue-i18n/no-unused-keys': 'error',
   },
   overrides: [
     {
