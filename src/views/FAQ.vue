@@ -8,7 +8,7 @@
         <h1>{{ $t('views.FAQ.header') }}</h1>
         <hr width="30%">
         <i18n
-          path="views.FAQ.subheader"
+          :path="$t('views.FAQ.subheader')"
           tag="p"
         >
           <template v-slot:tutorialPage>
