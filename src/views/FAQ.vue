@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <mobile-navigation />
-    <right-section />
-    <left-section />
+  <Page>
     <div class="container wrapper mt-2">
       <div class="content faq-page">
         <h1>{{ $t('views.FAQ.header') }}</h1>
@@ -17,7 +14,6 @@
             </router-link>
           </template>
         </i18n>
-
         <template v-for="(item, index) in questions">
           <expandable-block
             :key="index"
@@ -84,26 +80,22 @@
                 <br>
               </template>
             </i18n>
-          </expandable-block>
+          </ExpandableBlock>
         </template>
       </div>
     </div>
-  </div>
+  </Page>
 </template>
 
 <script>
-import LeftSection from '../components/layout/LeftSection.vue';
-import RightSection from '../components/layout/RightSection.vue';
+import Page from '../components/layout/Page.vue';
 import ExpandableBlock from '../components/ExpandableBlock.vue';
-import MobileNavigation from '../components/layout/MobileNavigation.vue';
 
 export default {
   name: 'FAQ',
   components: {
-    LeftSection,
-    RightSection,
+    Page,
     ExpandableBlock,
-    MobileNavigation,
   },
   data() {
     return {
