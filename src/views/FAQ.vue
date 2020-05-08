@@ -18,17 +18,14 @@
           </template>
         </i18n>
 
-        <template
-          v-for="(item, index) in
-            Object.keys($i18n.messages[$i18n.fallbackLocale].views.FAQ.questions).length"
-        >
+        <template v-for="(item, index) in questions">
           <expandable-block
             :key="index"
-            :title="$t('views.FAQ.questions')[index].title"
+            :title="item.title"
           >
             <i18n
               :key="index"
-              :path="getI18nPath(index)"
+              :path="item.text"
               tag="p"
             >
               <template v-slot:mission>
@@ -108,10 +105,10 @@ export default {
     ExpandableBlock,
     MobileNavigation,
   },
-  methods: {
-    getI18nPath(index) {
-      return `views.FAQ.questions[${index}].text`;
-    },
+  data() {
+    return {
+      questions: this.$i18n.messages[this.$i18n.fallbackLocale].views.FAQ.questions,
+    };
   },
 };
 </script>
